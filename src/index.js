@@ -9,6 +9,8 @@ async function handleRequest(request) {
 
         if (url.pathname.startsWith('/dist/v1/')) {
             targetURL = THECOOKIEJAR_SDK_V1_URL;
+        } else if (url.pathname.startsWith('/gtag')) {
+            targetURL = `https://www.googletagmanager.com${url.pathname}`;
         } else {
             targetURL = `${THECCOOKIEJAR_API_URL}${url.pathname}${url.search}`;
         }
